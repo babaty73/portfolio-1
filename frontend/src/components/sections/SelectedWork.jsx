@@ -4,7 +4,7 @@ import {
   X,
   ArrowRight,
   ExternalLink,
-  Github,
+  Link2,
   Backpack,
   Watch,
   KeyRound,
@@ -345,7 +345,7 @@ function ProjectModal({ project, onClose }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-zinc-800 hover:border-zinc-600 text-zinc-200 text-sm font-medium px-4 py-2.5 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-500"
           >
-            <Github className="w-4 h-4" />
+            <Link2 className="w-4 h-4" />
             View Code
           </a>
         </div>
