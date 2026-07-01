@@ -148,7 +148,7 @@ function CalendarVisual() {
           <div
             key={i}
             className={`flex-1 text-center text-xs py-1.5 rounded ${
-              i === 2 ? "bg-violet-600 text-white" : "bg-zinc-800 text-zinc-500"
+              i === 2 ? "bg-blue-600 text-white" : "bg-zinc-800 text-zinc-500"
             }`}
           >
             {d}
@@ -161,7 +161,7 @@ function CalendarVisual() {
             key={row}
             className={`h-5 rounded ${
               row === 1
-                ? "bg-violet-950 border border-violet-700"
+                ? "bg-blue-950 border border-blue-700"
                 : "bg-zinc-800"
             }`}
           />
@@ -308,13 +308,13 @@ function ProjectModal({ project, onClose }) {
         <button
           onClick={onClose}
           aria-label="Close case study"
-          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500"
+          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-zinc-800 hover:bg-zinc-700 flex items-center justify-center transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
         >
           <X className="w-4 h-4 text-zinc-300" />
         </button>
 
         <span
-          className="text-xs text-violet-400 tracking-wide"
+          className="text-xs text-blue-400 tracking-wide"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
           CASE STUDY — {project.index}
@@ -334,7 +334,7 @@ function ProjectModal({ project, onClose }) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-500 text-white text-sm font-medium px-4 py-2.5 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium px-4 py-2.5 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
           >
             <ExternalLink className="w-4 h-4" />
             Live Demo
@@ -372,8 +372,8 @@ function ProjectModal({ project, onClose }) {
 
         <div className="mt-8 space-y-8">
           <ModalSection label="Problem" data={project.problem} accent="border-zinc-700" />
-          <ModalSection label="Approach" data={project.approach} accent="border-violet-800" />
-          <ModalSection label="Solution" data={project.solution} accent="border-violet-600" />
+          <ModalSection label="Approach" data={project.approach} accent="border-blue-800" />
+          <ModalSection label="Solution" data={project.solution} accent="border-blue-600" />
           <ModalSection label="Result" data={project.result} accent="border-lime-700" />
         </div>
       </motion.div>
@@ -402,7 +402,7 @@ export default function SelectedWorkSection() {
           className="max-w-xl mb-16 md:mb-24"
         >
           <span
-            className="text-xs tracking-wide text-violet-400"
+            className="text-xs tracking-wide text-blue-400"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             SELECTED WORK
@@ -440,7 +440,7 @@ export default function SelectedWorkSection() {
                   CASE STUDY — {project.index}
                 </span>
                 <h3
-                  className="mt-3 text-2xl font-semibold tracking-tight group-hover:text-violet-400 transition-colors"
+                  className="mt-3 text-2xl font-semibold tracking-tight group-hover:text-blue-400 transition-colors"
                   style={{ fontFamily: "'Clash Display', sans-serif" }}
                 >
                   {project.title}
@@ -454,7 +454,7 @@ export default function SelectedWorkSection() {
                 >
                   {project.stack}
                 </span>
-                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-violet-400">
+                <div className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-blue-400">
                   View case study
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
@@ -469,7 +469,7 @@ export default function SelectedWorkSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5 }}
-                className="w-full grid md:grid-cols-12 gap-8 items-center text-left group focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500 rounded-2xl"
+                className="w-full grid md:grid-cols-12 gap-8 items-center text-left group focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded-2xl"
               >
                 {reversed ? (
                   <>

@@ -42,14 +42,14 @@
 
   /* selection color */
   ::selection {
-    @apply bg-violet-600 text-white;
+    @apply bg-blue-600 text-white;
   }
 }
 
 @layer utilities {
   /* grid background used in ProjectVisual — now a utility class */
   .bg-grid {
-    background-image: theme("backgroundImage.grid-violet");
+    background-image: theme("backgroundImage.grid-blue");
     background-size: theme("backgroundSize.grid");
   }
 }

@@ -33,7 +33,7 @@ export default function AboutSection() {
           className="md:col-span-4"
         >
           <span
-            className="text-xs tracking-wide text-violet-400"
+            className="text-xs tracking-wide text-blue-400"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             ABOUT
@@ -47,7 +47,7 @@ export default function AboutSection() {
 
           <a
             href="#contact"
-            className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-violet-400 hover:text-violet-300 transition-colors"
+            className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
           >
             Start a conversation
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

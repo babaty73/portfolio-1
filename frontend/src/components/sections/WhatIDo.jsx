@@ -47,7 +47,7 @@ export default function WhatIDoSection() {
           className="max-w-xl mb-16 md:mb-24"
         >
           <span
-            className="text-xs tracking-wide text-violet-400"
+            className="text-xs tracking-wide text-blue-400"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             WHAT I DO
@@ -74,10 +74,10 @@ export default function WhatIDoSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="group bg-zinc-900 border border-zinc-800 rounded-2xl p-7 hover:border-violet-500 transition-colors duration-300"
+                className="group bg-zinc-900 border border-zinc-800 rounded-2xl p-7 hover:border-blue-500 transition-colors duration-300"
               >
-                <div className="w-10 h-10 rounded-lg bg-violet-950 border border-violet-800 flex items-center justify-center mb-6 group-hover:bg-violet-900 transition-colors">
-                  <Icon className="w-5 h-5 text-violet-400" />
+                <div className="w-10 h-10 rounded-lg bg-blue-950 border border-blue-800 flex items-center justify-center mb-6 group-hover:bg-blue-900 transition-colors">
+                  <Icon className="w-5 h-5 text-blue-400" />
                 </div>
 
                 <h3

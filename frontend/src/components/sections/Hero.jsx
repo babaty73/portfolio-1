@@ -35,32 +35,11 @@ export default function PortfolioHero() {
       <style>{fontStyles}</style>
 
       {/* ambient glows */}
-      <div className="pointer-events-none absolute -top-32 right-0 w-96 h-96 rounded-full bg-violet-600 opacity-10 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 -left-40 w-96 h-96 rounded-full bg-violet-600 opacity-5 blur-3xl" />
-
-      {/* nav */}
-      <nav className="relative z-10 flex items-center justify-between px-6 md:px-12 py-6">
-        <span
-          className="text-lg font-semibold tracking-tight"
-          style={{ fontFamily: "'Clash Display', sans-serif" }}
-        >
-          Imran<span className="text-violet-400">.</span>
-        </span>
-        <div className="hidden md:flex items-center gap-8 text-sm text-zinc-400">
-          <a href="#work" className="hover:text-zinc-100 transition-colors">Work</a>
-          <a href="#process" className="hover:text-zinc-100 transition-colors">Process</a>
-          <a href="#about" className="hover:text-zinc-100 transition-colors">About</a>
-        </div>
-        <a
-          href="#contact"
-          className="text-sm font-medium px-4 py-2 rounded-full border border-zinc-800 hover:border-violet-500 hover:text-violet-400 transition-colors"
-        >
-          Get in touch
-        </a>
-      </nav>
+      <div className="pointer-events-none absolute -top-32 right-0 w-96 h-96 rounded-full bg-blue-600 opacity-10 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 -left-40 w-96 h-96 rounded-full bg-blue-600 opacity-5 blur-3xl" />
 
       {/* hero content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-12 md:pt-20 pb-24 grid md:grid-cols-12 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-18 md:pt-32 pb-24 grid md:grid-cols-12 gap-12 items-center">
         {/* left column */}
         <div className="md:col-span-7">
           <motion.div
@@ -89,7 +68,7 @@ export default function PortfolioHero() {
             style={{ fontFamily: "'Clash Display', sans-serif" }}
           >
             I build full-stack web apps that{" "}
-            <span className="text-violet-400">solve real problems.</span>
+            <span className="text-blue-400">solve real problems.</span>
           </motion.h1>
 
           <motion.p
@@ -110,7 +89,7 @@ export default function PortfolioHero() {
           >
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 bg-violet-600 text-white text-sm font-medium px-5 py-3 rounded-full hover:bg-violet-500 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+              className="group inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-medium px-5 py-3 rounded-full hover:bg-blue-500 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
             >
               View my work
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -170,7 +149,7 @@ export default function PortfolioHero() {
                   key={d}
                   className={`flex-1 text-center py-2 rounded-lg text-xs ${
                     i === ACTIVE_DAY
-                      ? "bg-violet-600 text-white"
+                      ? "bg-blue-600 text-white"
                       : "bg-zinc-800 text-zinc-400"
                   }`}
                   style={{ fontFamily: "'JetBrains Mono', monospace" }}
@@ -188,7 +167,7 @@ export default function PortfolioHero() {
                   transition={{ duration: 0.4 }}
                   className={`text-center py-2.5 rounded-lg text-sm border ${
                     selectedSlot === i
-                      ? "border-violet-500 bg-violet-950 text-violet-400"
+                      ? "border-blue-500 bg-blue-950 text-blue-400"
                       : "border-zinc-800 text-zinc-400"
                   }`}
                 >

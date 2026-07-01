@@ -54,7 +54,7 @@ module.exports = {
         'ping-slow': 'ping 2s cubic-bezier(0,0,0.2,1) infinite',
       },
       backgroundImage: {
-        'grid-violet':
+        'grid-blue':
           'linear-gradient(rgba(124,92,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(124,92,255,0.08) 1px, transparent 1px)',
       },
       backgroundSize: {

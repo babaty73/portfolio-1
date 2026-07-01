@@ -46,7 +46,7 @@ export default function TechStackSection() {
         >
           <div className="max-w-md">
             <span
-              className="text-xs tracking-wide text-violet-400"
+              className="text-xs tracking-wide text-blue-400"
               style={{ fontFamily: "'JetBrains Mono', monospace" }}
             >
               TECH STACK
@@ -85,7 +85,7 @@ export default function TechStackSection() {
                 {group.tools.map((tool) => (
                   <span
                     key={tool}
-                    className="text-sm text-zinc-300 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-violet-800 hover:text-zinc-100 transition-colors"
+                    className="text-sm text-zinc-300 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-blue-800 hover:text-zinc-100 transition-colors"
                   >
                     {tool}
                   </span>

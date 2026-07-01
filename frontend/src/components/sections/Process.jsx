@@ -54,7 +54,7 @@ export default function ProcessSection() {
           className="max-w-xl mb-16 md:mb-24"
         >
           <span
-            className="text-xs tracking-wide text-violet-400"
+            className="text-xs tracking-wide text-blue-400"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             PROCESS
@@ -87,7 +87,7 @@ export default function ProcessSection() {
                 className="relative z-10 w-12 h-12 rounded-full bg-zinc-950 border-2 border-zinc-800 flex items-center justify-center flex-shrink-0 md:mb-5"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                <span className="text-sm text-violet-400">{step.number}</span>
+                <span className="text-sm text-blue-400">{step.number}</span>
               </div>
 
               <div className="flex-1 md:flex-none md:px-2">

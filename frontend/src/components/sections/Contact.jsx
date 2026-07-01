@@ -14,7 +14,7 @@ const SOCIALS = [
 ];
 
 const FIELD_BASE =
-  "w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-violet-600 transition-colors";
+  "w-full bg-zinc-900 border border-zinc-800 rounded-xl px-4 py-3 text-sm text-zinc-100 placeholder-zinc-600 focus:outline-none focus:border-blue-600 transition-colors";
 
 function Field({ label, error, children }) {
   return (
@@ -95,7 +95,7 @@ export default function ContactSection() {
           className="md:col-span-5"
         >
           <span
-            className="text-xs tracking-wide text-violet-400"
+            className="text-xs tracking-wide text-blue-400"
             style={{ fontFamily: "'JetBrains Mono', monospace" }}
           >
             CONTACT
@@ -121,7 +121,7 @@ export default function ContactSection() {
               </span>
               <a
                 href="mailto:your@email.com"
-                className="mt-1 block text-sm text-zinc-300 hover:text-violet-400 transition-colors"
+                className="mt-1 block text-sm text-zinc-300 hover:text-blue-400 transition-colors"
               >
                 your@email.com
               </a>
@@ -142,7 +142,7 @@ export default function ContactSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 hover:border-violet-600 hover:text-violet-400 flex items-center justify-center transition-colors"
+                    className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 hover:border-blue-600 hover:text-blue-400 flex items-center justify-center transition-colors"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -197,7 +197,7 @@ export default function ContactSection() {
             <button
               onClick={handleSubmit}
               disabled={status === "sending" || status === "success"}
-              className="w-full flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-500 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm font-medium px-5 py-3.5 rounded-xl transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-500"
+              className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm font-medium px-5 py-3.5 rounded-xl transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
             >
               {status === "sending" ? (
                 <span className="animate-pulse">Sending…</span>

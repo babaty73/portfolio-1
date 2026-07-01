@@ -86,10 +86,10 @@ function Navbar() {
           {/* logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-lg font-semibold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500 rounded"
+            className="text-lg font-semibold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded"
             style={{ fontFamily: "'Clash Display', sans-serif" }}
           >
-            Imran<span className="text-violet-400">.</span>
+            Imran<span className="text-blue-400">.</span>
           </button>
 
           {/* desktop nav */}
@@ -100,7 +100,7 @@ function Navbar() {
                 <button
                   key={href}
                   onClick={() => handleNavClick(href)}
-                  className={`transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500 rounded ${
+                  className={`transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded ${
                     active === id
                       ? "text-zinc-100"
                       : "text-zinc-500 hover:text-zinc-300"
@@ -115,7 +115,7 @@ function Navbar() {
           {/* desktop cta */}
           <button
             onClick={() => handleNavClick("#contact")}
-            className="hidden md:inline-flex text-sm font-medium px-4 py-2 rounded-full border border-zinc-800 hover:border-violet-500 hover:text-violet-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500"
+            className="hidden md:inline-flex text-sm font-medium px-4 py-2 rounded-full border border-zinc-800 hover:border-blue-500 hover:text-blue-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
           >
             Get in touch
           </button>
@@ -124,7 +124,7 @@ function Navbar() {
           <button
             onClick={() => setMobileOpen((v) => !v)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            className="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500"
+            className="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-zinc-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
           >
             {mobileOpen ? (
               <X className="w-4 h-4" />
@@ -150,14 +150,14 @@ function Navbar() {
               <button
                 key={href}
                 onClick={() => handleNavClick(href)}
-                className="text-left text-base text-zinc-300 hover:text-violet-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-violet-500 rounded"
+                className="text-left text-base text-zinc-300 hover:text-blue-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded"
               >
                 {label}
               </button>
             ))}
             <button
               onClick={() => handleNavClick("#contact")}
-              className="mt-2 w-full text-center text-sm font-medium px-4 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white transition-colors"
+              className="mt-2 w-full text-center text-sm font-medium px-4 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors"
             >
               Get in touch
             </button>
