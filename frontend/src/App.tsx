@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 import Hero from "./components/sections/Hero";
 import WhatIDo from "./components/sections/WhatIDo";
 import SelectedWork from "./components/sections/SelectedWork";
-import Process from "./components/sections/Process";
 import TechStack from "./components/sections/TechStack";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
@@ -18,12 +17,11 @@ const fontStyles = `
 
 const NAV_LINKS = [
   { label: "Work", href: "#work" },
-  { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
-const SECTION_IDS = ["work", "process", "about", "contact"];
+const SECTION_IDS = ["work", "about", "contact"];
 
 function useActiveSection() {
   const [active, setActive] = useState("");
@@ -177,7 +175,6 @@ export default function App() {
         <Hero />
         <WhatIDo />
         <SelectedWork />
-        <Process />
         <TechStack />
         <About />
         <Contact />

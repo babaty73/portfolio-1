@@ -1,31 +1,12 @@
-import { useState, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Check } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const fontStyles = `
   @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 `;
 
-const DAYS = ["MON", "TUE", "WED", "THU", "FRI"];
-const SLOTS = ["9:00", "10:30", "12:00", "1:30", "3:00", "4:30"];
-const ACTIVE_DAY = 2;
-const ACTIVE_SLOT = 2;
-
 export default function PortfolioHero() {
-  const reduceMotion = useReducedMotion();
-  const [selectedSlot, setSelectedSlot] = useState(reduceMotion ? ACTIVE_SLOT : null);
-  const [confirmed, setConfirmed] = useState(reduceMotion);
-
-  useEffect(() => {
-    if (reduceMotion) return;
-    const t1 = setTimeout(() => setSelectedSlot(ACTIVE_SLOT), 1400);
-    const t2 = setTimeout(() => setConfirmed(true), 2200);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
-  }, [reduceMotion]);
 
   return (
     <div
@@ -39,9 +20,8 @@ export default function PortfolioHero() {
       <div className="pointer-events-none absolute bottom-0 -left-40 w-96 h-96 rounded-full bg-blue-600 opacity-5 blur-3xl" />
 
       {/* hero content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-18 md:pt-32 pb-24 grid md:grid-cols-12 gap-12 items-center">
-        {/* left column */}
-        <div className="md:col-span-7">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-18 md:pt-32 pb-24">
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,78 +98,6 @@ export default function PortfolioHero() {
             <span>NODE</span>
           </motion.div>
         </div>
-
-        {/* right column — signature widget */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="md:col-span-5 relative"
-        >
-          <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full rounded-2xl border border-zinc-800" />
-
-          <div className="relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 shadow-2xl">
-            <div className="flex items-center justify-between mb-5">
-              <span
-                className="text-xs text-zinc-400 tracking-wide"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
-                BOOK A SESSION
-              </span>
-              <div className="flex gap-1">
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-                <span className="w-1.5 h-1.5 rounded-full bg-zinc-700" />
-              </div>
-            </div>
-
-            <div className="flex gap-2 mb-5">
-              {DAYS.map((d, i) => (
-                <div
-                  key={d}
-                  className={`flex-1 text-center py-2 rounded-lg text-xs ${
-                    i === ACTIVE_DAY
-                      ? "bg-blue-600 text-white"
-                      : "bg-zinc-800 text-zinc-400"
-                  }`}
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  {d}
-                </div>
-              ))}
-            </div>
-
-            <div className="grid grid-cols-3 gap-2">
-              {SLOTS.map((t, i) => (
-                <motion.div
-                  key={t}
-                  animate={selectedSlot === i ? { scale: [1, 1.04, 1] } : {}}
-                  transition={{ duration: 0.4 }}
-                  className={`text-center py-2.5 rounded-lg text-sm border ${
-                    selectedSlot === i
-                      ? "border-blue-500 bg-blue-950 text-blue-400"
-                      : "border-zinc-800 text-zinc-400"
-                  }`}
-                >
-                  {t}
-                </motion.div>
-              ))}
-            </div>
-
-            {confirmed && (
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-5 flex items-center gap-2 bg-lime-950 border border-lime-800 rounded-lg px-3 py-2.5"
-              >
-                <Check className="w-4 h-4 text-lime-400" />
-                <span className="text-xs text-lime-400 font-medium">
-                  Appointment confirmed
-                </span>
-              </motion.div>
-            )}
-          </div>
-        </motion.div>
       </div>
     </div>
   );
