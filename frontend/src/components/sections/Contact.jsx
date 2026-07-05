@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Link, Mail } from "lucide-react";
+import { Send, Mail, Linkedin,Github } from "lucide-react";
 
 const fontStyles = `
   @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
@@ -8,9 +8,10 @@ const fontStyles = `
 `;
 
 const SOCIALS = [
-  { label: "GitHub", icon: Link, href: "https://github.com/your-username" },
-  { label: "LinkedIn", icon: Link, href: "https://linkedin.com/in/your-username" },
-  { label: "Email", icon: Mail, href: "mailto:your@email.com" },
+  { label: "Telegram", icon: Send, href: "https://t.me/Babafootballeru" },
+  { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/your-username" },
+  { label: "GitHub", icon: Github, href: "https://github.com/babaty73" },
+  { label: "Email", icon: Mail, href: "mailto:imranidris10999@email.com" },
 ];
 
 const FIELD_BASE =
@@ -120,10 +121,10 @@ export default function ContactSection() {
                 DIRECT EMAIL
               </span>
               <a
-                href="mailto:your@email.com"
+                href="mailto:imranidris10999@gmail.com"
                 className="mt-1 block text-sm text-zinc-300 hover:text-sky-400 transition-colors"
               >
-                imranidris10999@email.com
+                imranidris10999@gmail.com
               </a>
             </div>
 
@@ -215,7 +216,7 @@ export default function ContactSection() {
               <p className="text-xs text-sky-400 text-center">
                 Something went wrong. Email me directly at{" "}
                 <a
-                  href="mailto:your@email.com"
+                  href="mailto:imranidris10999@email.com"
                   className="underline hover:text-sky-300"
                 >
                   imranidris10999@email.com
