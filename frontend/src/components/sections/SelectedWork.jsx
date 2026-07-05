@@ -21,6 +21,7 @@ const PROJECTS = [
     id: "booking",
     index: "01",
     variant: "calendar",
+    image: "/assets/apointment.png",
     title: "Appointment Booking App",
     tagline: "Production-grade scheduling system for service businesses.",
     role: "Solo developer — full stack",
@@ -61,6 +62,7 @@ const PROJECTS = [
     id: "bloomcare",
     index: "02",
     variant: "comparison",
+    image: "/assets/bloom-care-screenshot.png",
     title: "Bloom-care",
     tagline: "Real-time medicine availability and price comparison.",
     role: "Solo developer — frontend",
@@ -101,6 +103,7 @@ const PROJECTS = [
     id: "lostfound",
     index: "03",
     variant: "listing",
+    image: "/assets/lost-and-found.jpg",
     title: "Lost and Found System",
     tagline: "Digitizing a manual lost-and-found process for campus life.",
     role: "Solo developer — frontend",
@@ -237,7 +240,7 @@ const VISUALS = {
   listing: ListingVisual,
 };
 
-function ProjectVisual({ variant }) {
+function ProjectVisual({ variant, image }) {
   const Visual = VISUALS[variant];
   return (
     <div className="relative w-full h-56 md:h-72 rounded-2xl bg-zinc-900 border border-zinc-800 overflow-hidden flex items-center justify-center">
@@ -249,8 +252,17 @@ function ProjectVisual({ variant }) {
           backgroundSize: "28px 28px",
         }}
       />
-      <div className="relative">
-        <Visual />
+      <div className="relative w-full h-full p-4 flex items-center justify-center">
+        {image ? (
+          <img
+            src={image}
+            alt=""
+            className="w-full h-full object-cover object-top rounded-xl border border-zinc-800"
+            loading="lazy"
+          />
+        ) : (
+          <Visual />
+        )}
       </div>
     </div>
   );
@@ -426,7 +438,7 @@ export default function SelectedWorkSection() {
             const visual = (
               <div className="md:col-span-7">
                 <div className="transition-transform duration-300 group-hover:scale-[1.02]">
-                  <ProjectVisual variant={project.variant} />
+                  <ProjectVisual variant={project.variant} image={project.image} />
                 </div>
               </div>
             );
