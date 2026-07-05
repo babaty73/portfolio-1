@@ -1,18 +1,57 @@
 import { motion } from "framer-motion";
+import {
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiVite,
+  SiNodedotjs,
+  SiExpress,
+  SiJsonwebtokens,
+  SiMongodb,
+  SiMongoose,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiVercel,
+  SiRender,
+  SiRailway,
+} from "react-icons/si";
+import { IoMailOutline, IoGlobeOutline, IoRocketOutline } from "react-icons/io5";
+import { FiDatabase, FiTerminal } from "react-icons/fi";
+import { VscCode } from "react-icons/vsc";
 
 const fontStyles = `
   @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 `;
 
+const TOOL_META = {
+  React: { icon: SiReact, label: "React" },
+  TypeScript: { icon: SiTypescript, label: "TypeScript" },
+  "Tailwind CSS": { icon: SiTailwindcss, label: "Tailwind CSS" },
+  Vite: { icon: SiVite, label: "Vite" },
+  "Node.js": { icon: SiNodedotjs, label: "Node.js" },
+  Express: { icon: SiExpress, label: "Express" },
+  "REST API": { icon: FiTerminal, label: "REST API" },
+  "JWT Auth": { icon: SiJsonwebtokens, label: "JWT Auth" },
+  MongoDB: { icon: SiMongodb, label: "MongoDB" },
+  Mongoose: { icon: FiDatabase, label: "Mongoose" },
+  Git: { icon: SiGit, label: "Git" },
+  GitHub: { icon: SiGithub, label: "GitHub" },
+  Postman: { icon: SiPostman, label: "Postman" },
+  "VS Code": { icon: VscCode, label: "VS Code" },
+  Vercel: { icon: SiVercel, label: "Vercel" },
+  Render: { icon: SiRender, label: "Render" },
+};
+
 const GROUPS = [
   {
     layer: "Frontend",
-    tools: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
+    tools: ["React", "TypeScript", "Tailwind CSS", "Vite"],
   },
   {
     layer: "Backend",
-    tools: ["Node.js", "Express", "REST API", "JWT Auth", "Nodemailer"],
+    tools: ["Node.js", "Express", "REST API", "JWT Auth"],
   },
   {
     layer: "Database",
@@ -24,7 +63,7 @@ const GROUPS = [
   },
   {
     layer: "Deployment",
-    tools: ["Vercel", "Render", "Railway"],
+    tools: ["Vercel", "Render"],
   },
 ];
 
@@ -82,14 +121,19 @@ export default function TechStackSection() {
               </span>
 
               <div className="flex flex-wrap gap-2">
-                {group.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="text-sm text-zinc-300 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-blue-800 hover:text-zinc-100 transition-colors"
-                  >
-                    {tool}
-                  </span>
-                ))}
+                {group.tools.map((tool) => {
+                  const meta = TOOL_META[tool];
+                  const Icon = meta?.icon || IoRocketOutline;
+                  return (
+                    <span
+                      key={tool}
+                      className="inline-flex items-center gap-2 text-sm text-zinc-300 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-blue-800 hover:text-zinc-100 transition-colors"
+                    >
+                      <Icon className="w-4 h-4" />
+                      <span>{meta?.label || tool}</span>
+                    </span>
+                  );
+                })}
               </div>
             </motion.div>
           ))}

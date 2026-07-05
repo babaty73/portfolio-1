@@ -5,12 +5,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        // keep Tailwind's zinc scale, extend with named tokens
+        blue: {
+          50:  "#eff6ff",
+          100: "#dbeafe",
+          200: "#bfdbfe",
+          300: "#93c5fd",
+          400: "#60a5fa",
+          500: "#3b82f6",
+          600: "#2563eb",
+          700: "#1d4ed8",
+          800: "#1e40af",
+          900: "#1e3a8a",
+          950: "#172554",
+        },
         accent: {
-          DEFAULT: "#7C5CFF",
-          hover:   "#6d4ff0",
-          muted:   "#3d2b8a",
-          subtle:  "#1a1133",
+          DEFAULT: "#2563eb",
+          hover:   "#1d4ed8",
+          muted:   "#1e3a8a",
+          subtle:  "#172554",
         },
         surface: {
           base:    "#0A0A0B", // zinc-950 equivalent
