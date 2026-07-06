@@ -64,27 +64,21 @@ const transporter = nodemailer.createTransport({
 
 async function sendNotification({ name, email, message }) {
   try {
-  const info = await transporter.sendMail({
-    from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-    to: process.env.EMAIL_TO,
-    subject: `New message from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    html: `
-      <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:24px;">
-        <h2>New contact form submission</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Message:</b><br/>${message}</p>
-      </div>
-    `,
-  });
+    console.log("📨 Sending email...");
 
-  console.log("✅ Email sent successfully:", info.messageId);
-} catch (err) {
-  console.log("❌ EMAIL FAILED:", err.message || err);
-}
-}
+    const info = await transporter.sendMail({
+      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_TO,
+      subject: `New message from ${name}`,
+      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      html: `<h2>New message</h2><p>${name}</p><p>${email}</p><p>${message}</p>`,
+    });
 
+    console.log("✅ EMAIL SENT:", info.messageId);
+  } catch (err) {
+    console.log("❌ EMAIL FAILED:", err);
+  }
+}
 // ─── validation rules ─────────────────────────────────────────────────────────
 
 const contactValidation = [
