@@ -63,21 +63,16 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendNotification({ name, email, message }) {
-  try {
-    console.log("📨 Sending email...");
+  console.log("📨 EMAIL FUNCTION STARTED");
 
-    const info = await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO,
-      subject: `New message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-      html: `<h2>New message</h2><p>${name}</p><p>${email}</p><p>${message}</p>`,
-    });
+  const info = await transporter.sendMail({
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_TO,
+    subject: `New message from ${name}`,
+    text: message,
+  });
 
-    console.log("✅ EMAIL SENT:", info.messageId);
-  } catch (err) {
-    console.log("❌ EMAIL FAILED:", err);
-  }
+  console.log("✅ EMAIL SENT:", info.messageId);
 }
 // ─── validation rules ─────────────────────────────────────────────────────────
 
@@ -121,10 +116,7 @@ app.post(
       await Contact.create({ name, email, message, ip });
 
       // 2. send email notification (non-blocking on failure)
-      sendNotification({ name, email, message }).catch((err) =>
-        console.error("[nodemailer] failed to send notification:", err.message)
-      );
-
+      await sendNotification({ name, email, message });
       return res.status(201).json({ message: "Message received. I'll be in touch." });
     } catch (err) {
       console.error("[contact] db error:", err.message);
