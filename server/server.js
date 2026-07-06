@@ -63,33 +63,26 @@ const transporter = nodemailer.createTransport({
 });
 
 async function sendNotification({ name, email, message }) {
-  await transporter.sendMail({
+  try {
+  const info = await transporter.sendMail({
     from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
     to: process.env.EMAIL_TO,
     subject: `New message from ${name}`,
     text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
     html: `
       <div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:24px;">
-        <h2 style="margin:0 0 16px;font-size:18px;">New contact form submission</h2>
-        <table style="width:100%;border-collapse:collapse;">
-          <tr>
-            <td style="padding:8px 0;color:#71717a;font-size:13px;width:80px;">NAME</td>
-            <td style="padding:8px 0;font-size:14px;">${name}</td>
-          </tr>
-          <tr>
-            <td style="padding:8px 0;color:#71717a;font-size:13px;">EMAIL</td>
-            <td style="padding:8px 0;font-size:14px;">
-              <a href="mailto:${email}" style="color:#7c3aed;">${email}</a>
-            </td>
-          </tr>
-        </table>
-        <div style="margin-top:16px;padding:16px;background:#f4f4f5;border-radius:8px;font-size:14px;line-height:1.6;white-space:pre-wrap;">${message}</div>
-        <p style="margin-top:20px;font-size:12px;color:#a1a1aa;">
-          Submitted via portfolio contact form · ${new Date().toUTCString()}
-        </p>
+        <h2>New contact form submission</h2>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Message:</b><br/>${message}</p>
       </div>
     `,
   });
+
+  console.log("✅ Email sent successfully:", info.messageId);
+} catch (err) {
+  console.log("❌ EMAIL FAILED:", err.message || err);
+}
 }
 
 // ─── validation rules ─────────────────────────────────────────────────────────
