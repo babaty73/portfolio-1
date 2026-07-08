@@ -102,6 +102,7 @@ app.post(
   contactLimiter,
   contactValidation,
   async (req, res) => {
+    console.log("🔥 CONTACT ROUTE HIT");
     // return validation errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -116,7 +117,9 @@ app.post(
       await Contact.create({ name, email, message, ip });
 
       // 2. send email notification (non-blocking on failure)
+      console.log("➡️ About to send email");
       await sendNotification({ name, email, message });
+      console.log("⬅️ After send email");
       return res.status(201).json({ message: "Message received. I'll be in touch." });
     } catch (err) {
       console.error("[contact] db error:", err.message);
