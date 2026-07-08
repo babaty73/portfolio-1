@@ -49,19 +49,18 @@ const Contact = mongoose.model("Contact", contactSchema);
 // ─── nodemailer transporter ───────────────────────────────────────────────────
 
 const transporter = nodemailer.createTransport({
-  service: "gmail",          // or use SMTP_HOST/PORT for a custom provider
+  host: "smtp.gmail.com",
+  port: 587,
+  secure: false,
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS, // use an App Password, not your actual password
+    pass: process.env.EMAIL_PASS,
   },
+  connectionTimeout: 30000,
+  greetingTimeout: 30000,
+  socketTimeout: 30000,
 });
-transporter.verify((err, success) => {
-  if (err) {
-    console.error("❌ VERIFY ERROR:", err);
-  } else {
-    console.log("✅ Gmail connection successful");
-  }
-});
+
 async function sendNotification({ name, email, message }) {
   console.log("📨 EMAIL FUNCTION STARTED");
 
