@@ -1,6 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import { body, validationResult } from "express-validator";
 import rateLimit from "express-rate-limit";
 import cors from "cors";
@@ -45,41 +45,35 @@ const contactSchema = new mongoose.Schema(
 );
 
 const Contact = mongoose.model("Contact", contactSchema);
+// 
+// ─── Resend ───────────────────────────────────────────────────
 
-// ─── nodemailer transporter ───────────────────────────────────────────────────
-
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  connectionTimeout: 30000,
-  greetingTimeout: 30000,
-  socketTimeout: 30000,
-});
-
-transporter.verify((err, success) => {
-  if (err) {
-    console.error("❌ VERIFY ERROR:", err);
-  } else {
-    console.log("✅ Gmail connection successful");
-  }
-});
-
+const resend = new Resend(process.env.RESEND_API_KEY);
 async function sendNotification({ name, email, message }) {
-  console.log("📨 EMAIL FUNCTION STARTED");
-
-  const info = await transporter.sendMail({
-    from: process.env.EMAIL_USER,
+  const { data, error } = await resend.emails.send({
+    from: "Portfolio <onboarding@resend.dev>",
     to: process.env.EMAIL_TO,
     subject: `New message from ${name}`,
-    text: message,
+    replyTo: email,
+    html: `
+      <h2>New Contact Form Submission</h2>
+
+      <p><strong>Name:</strong> ${name}</p>
+
+      <p><strong>Email:</strong> ${email}</p>
+
+      <p><strong>Message:</strong></p>
+
+      <p>${message}</p>
+    `,
   });
 
-  console.log("✅ EMAIL SENT:", info.messageId);
+  if (error) {
+    console.error(error);
+    throw error;
+  }
+
+  console.log("✅ Email sent:", data);
 }
 // ─── validation rules ─────────────────────────────────────────────────────────
 
