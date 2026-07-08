@@ -1,10 +1,3 @@
-// ─── server/index.js ─────────────────────────────────────────────────────────
-// Node/Express contact form API
-// Stack: Express · MongoDB/Mongoose · Nodemailer · express-rate-limit · cors
-//
-// Install dependencies:
-// npm install express mongoose nodemailer express-rate-limit cors dotenv express-validator
-
 import express from "express";
 import mongoose from "mongoose";
 import nodemailer from "nodemailer";
@@ -14,6 +7,7 @@ import cors from "cors";
 import "dotenv/config";
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 4000;
 
 // ─── middleware ───────────────────────────────────────────────────────────────
@@ -61,7 +55,13 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, // use an App Password, not your actual password
   },
 });
-
+transporter.verify((err, success) => {
+  if (err) {
+    console.error("❌ VERIFY ERROR:", err);
+  } else {
+    console.log("✅ Gmail connection successful");
+  }
+});
 async function sendNotification({ name, email, message }) {
   console.log("📨 EMAIL FUNCTION STARTED");
 
