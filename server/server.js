@@ -61,6 +61,14 @@ const transporter = nodemailer.createTransport({
   socketTimeout: 30000,
 });
 
+transporter.verify((err, success) => {
+  if (err) {
+    console.error("❌ VERIFY ERROR:", err);
+  } else {
+    console.log("✅ Gmail connection successful");
+  }
+});
+
 async function sendNotification({ name, email, message }) {
   console.log("📨 EMAIL FUNCTION STARTED");
 
