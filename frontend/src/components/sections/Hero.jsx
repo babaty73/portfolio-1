@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
+import profImage from "../../assets/Prof.png";
 
 const fontStyles = `
   @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
@@ -7,7 +8,6 @@ const fontStyles = `
 `;
 
 export default function PortfolioHero() {
-
   return (
     <div
       className="min-h-screen bg-zinc-950 text-zinc-100 relative overflow-hidden"
@@ -21,7 +21,45 @@ export default function PortfolioHero() {
 
       {/* hero content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-18 md:pt-32 pb-24">
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-center">
+          {/* profile — top on mobile, right column on desktop */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="order-1 lg:order-2 flex justify-start lg:justify-end"
+          >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6">
+              <div className="shrink-0 w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden ring-1 ring-zinc-700 ring-offset-2 ring-offset-zinc-950">
+                <img
+                  src={profImage}
+                  alt="Imran Idris"
+                  className="w-full h-full object-cover object-[center_20%]"
+                  width={112}
+                  height={112}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div className="text-left">
+                <p
+                  className="text-base font-medium text-zinc-200"
+                  style={{ fontFamily: "'Clash Display', sans-serif" }}
+                >
+                  Imran Idris
+                </p>
+                <p
+                  className="mt-1 text-xs text-zinc-500 tracking-wide"
+                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                >
+                  Full-Stack Developer · Addis Ababa
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* text & CTA */}
+          <div className="order-2 lg:order-1 w-full">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,8 +102,24 @@ export default function PortfolioHero() {
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="mt-8"
+          >
+            <a
+              href="/assets/Imran_Idris-Resume.pdf"
+              download
+              className="group inline-flex items-center gap-2.5 bg-zinc-900 text-zinc-100 text-sm font-medium px-6 py-3.5 rounded-full border border-zinc-800 hover:border-blue-500/60 hover:shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] hover:scale-[1.02] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
+            >
+              <Download className="w-4 h-4 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />
+              Download Resume
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
+            className="mt-6 flex flex-wrap items-center gap-4"
           >
             <a
               href="#work"
@@ -97,6 +151,7 @@ export default function PortfolioHero() {
             <span className="text-zinc-800">/</span>
             <span>NODE</span>
           </motion.div>
+          </div>
         </div>
       </div>
     </div>
