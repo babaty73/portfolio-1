@@ -9,7 +9,7 @@ const fontStyles = `
 
 const SOCIALS = [
   { label: "Telegram", icon: Send, href: "https://t.me/Babafootballeru" },
-  { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/your-username" },
+  { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/imran-endris-26b0103a2" },
   { label: "GitHub", icon: Github, href: "https://github.com/babaty73" },
   { label: "Email", icon: Mail, href: "mailto:imranidris10999@email.com" },
 ];
