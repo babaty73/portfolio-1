@@ -27,8 +27,8 @@ const PROJECTS = [
     role: "Solo developer — full stack",
     type: "Full-stack web app",
     stack: "MongoDB · Express · React · Node",
-    liveUrl: "https://your-live-demo-url.com",
-    githubUrl: "https://github.com/your-username/appointment-booking-app",
+    liveUrl: "https://appointment-booking-app11.vercel.app",
+    githubUrl: "https://github.com/babaty73/appointment-booking-app",
     problem: {
       lead: "Manual scheduling doesn't scale.",
       points: [
@@ -68,8 +68,8 @@ const PROJECTS = [
     role: "Solo developer — frontend",
     type: "Search & comparison tool",
     stack: "React · TypeScript · Tailwind",
-    liveUrl: "https://your-live-demo-url.com",
-    githubUrl: "https://github.com/your-username/bloom-care",
+    liveUrl: "https://bloom-cares.vercel.app",
+    githubUrl: "https://github.com/babaty73/bloom-care",
     problem: {
       lead: "Medicine availability is invisible until you're at the counter.",
       points: [
@@ -109,8 +109,8 @@ const PROJECTS = [
     role: "Solo developer — frontend",
     type: "Campus utility app",
     stack: "React · Tailwind",
-    liveUrl: "https://your-live-demo-url.com",
-    githubUrl: "https://github.com/your-username/lost-and-found-system",
+    liveUrl: "https://lost-and-found-six-theta.vercel.app",
+    githubUrl: "https://github.com/babaty73/lost-and-found",
     problem: {
       lead: "Manual lost-and-found loses items, not just records.",
       points: [
