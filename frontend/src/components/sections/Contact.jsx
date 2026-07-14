@@ -1,17 +1,13 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, Linkedin,Github } from "lucide-react";
+import { Send, Mail, Linkedin, Github } from "lucide-react";
 const API_URL = import.meta.env.VITE_API_URL;
-const fontStyles = `
-  @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-`;
 
 const SOCIALS = [
   { label: "Telegram", icon: Send, href: "https://t.me/Babafootballeru" },
   { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/imran-endris-26b0103a2" },
   { label: "GitHub", icon: Github, href: "https://github.com/babaty73" },
-  { label: "Email", icon: Mail, href: "mailto:imranidris10999@email.com" },
+  { label: "Email", icon: Mail, href: "mailto:imranidris10999@gmail.com" },
 ];
 
 const FIELD_BASE =
@@ -58,10 +54,10 @@ export default function ContactSection() {
     setStatus("sending");
     try {
       const res = await fetch(`${API_URL}/api/contact`, {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(form),
-});
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
       if (!res.ok) throw new Error();
       setStatus("success");
       setForm({ name: "", email: "", message: "" });
@@ -83,7 +79,6 @@ export default function ContactSection() {
       className="bg-zinc-950 text-zinc-100 px-6 md:px-12 py-24 md:py-36"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
-      <style>{fontStyles}</style>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-start">
 
@@ -122,7 +117,7 @@ export default function ContactSection() {
               </span>
               <a
                 href="mailto:imranidris10999@gmail.com"
-                className="mt-1 block text-sm text-zinc-300 hover:text-sky-400 transition-colors"
+                className="mt-1 block text-sm text-zinc-300 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
               >
                 imranidris10999@gmail.com
               </a>
@@ -143,7 +138,7 @@ export default function ContactSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 hover:border-sky-500 hover:text-sky-400 flex items-center justify-center transition-colors"
+                    className="w-9 h-9 rounded-full bg-zinc-900 border border-zinc-800 hover:border-sky-500 hover:text-sky-400 flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -216,10 +211,10 @@ export default function ContactSection() {
               <p className="text-xs text-sky-400 text-center">
                 Something went wrong. Email me directly at{" "}
                 <a
-                  href="mailto:imranidris10999@email.com"
-                  className="underline hover:text-sky-300"
+                  href="mailto:imranidris10999@gmail.com"
+                  className="underline hover:text-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 rounded"
                 >
-                  imranidris10999@email.com
+                  imranidris10999@gmail.com
                 </a>
               </p>
             )}
@@ -243,7 +238,7 @@ export default function ContactSection() {
         </span>
         <a
           href="#"
-          className="text-xs text-zinc-700 hover:text-zinc-400 transition-colors"
+          className="text-xs text-zinc-700 hover:text-zinc-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 rounded"
           style={{ fontFamily: "'JetBrains Mono', monospace" }}
         >
           BACK TO TOP ↑

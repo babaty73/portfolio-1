@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const fontStyles = `
-  @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-`;
 
 const FACTS = [
   { label: "Based in", value: "Addis Ababa, Ethiopia" },
@@ -20,7 +16,6 @@ export default function AboutSection() {
       className="bg-zinc-950 text-zinc-100 px-6 md:px-12 py-24 md:py-36"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
-      <style>{fontStyles}</style>
 
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-12 md:gap-16 items-start">
 
@@ -47,7 +42,7 @@ export default function AboutSection() {
 
           <a
             href="#contact"
-            className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+            className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded"
           >
             Start a conversation
             <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

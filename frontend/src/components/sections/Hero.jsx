@@ -2,18 +2,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import profImage from "../../assets/Prof.png";
 
-const fontStyles = `
-  @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-`;
-
 export default function PortfolioHero() {
   return (
     <div
       className="min-h-screen bg-zinc-950 text-zinc-100 relative overflow-hidden"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
-      <style>{fontStyles}</style>
 
       {/* ambient glows */}
       <div className="pointer-events-none absolute -top-32 right-0 w-96 h-96 rounded-full bg-blue-600 opacity-10 blur-3xl" />

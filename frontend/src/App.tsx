@@ -10,10 +10,6 @@ import TechStack from "./components/sections/TechStack";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
 
-const fontStyles = `
-  @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-`;
 
 const NAV_LINKS = [
   { label: "Work", href: "#work" },
@@ -155,7 +151,7 @@ function Navbar() {
             ))}
             <button
               onClick={() => handleNavClick("#contact")}
-              className="mt-2 w-full text-center text-sm font-medium px-4 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors"
+              className="mt-2 w-full text-center text-sm font-medium px-4 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
             >
               Get in touch
             </button>
@@ -169,7 +165,6 @@ function Navbar() {
 export default function App() {
   return (
     <div className="bg-zinc-950 min-h-screen text-zinc-100 antialiased">
-      <style>{fontStyles}</style>
       <Navbar />
       <main>
         <Hero />

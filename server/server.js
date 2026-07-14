@@ -118,9 +118,14 @@ app.post(
       await Contact.create({ name, email, message, ip });
 
       // 2. send email notification (non-blocking on failure)
-      console.log("➡️ About to send email");
-      await sendNotification({ name, email, message });
-      console.log("⬅️ After send email");
+      try {
+        console.log("➡️ About to send email");
+        await sendNotification({ name, email, message });
+        console.log("⬅️ After send email");
+      } catch (emailErr) {
+        console.error("[contact] email notification failed:", emailErr.message);
+      }
+
       return res.status(201).json({ message: "Message received. I'll be in touch." });
     } catch (err) {
       console.error("[contact] db error:", err.message);

@@ -1,10 +1,6 @@
 import { motion } from "framer-motion";
 import { Layers, LayoutDashboard, Plug } from "lucide-react";
 
-const fontStyles = `
-  @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-`;
 
 const PILLARS = [
   {
@@ -36,7 +32,6 @@ export default function WhatIDoSection() {
       className="bg-zinc-950 text-zinc-100 px-6 md:px-12 py-24 md:py-36"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
-      <style>{fontStyles}</style>
 
       <div className="max-w-6xl mx-auto">
         <motion.div

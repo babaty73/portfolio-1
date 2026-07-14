@@ -20,28 +20,23 @@ import { IoMailOutline, IoGlobeOutline, IoRocketOutline } from "react-icons/io5"
 import { FiDatabase, FiTerminal } from "react-icons/fi";
 import { VscCode } from "react-icons/vsc";
 
-const fontStyles = `
-  @import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-`;
-
 const TOOL_META = {
-  React: { icon: SiReact, label: "React" },
-  TypeScript: { icon: SiTypescript, label: "TypeScript" },
-  "Tailwind CSS": { icon: SiTailwindcss, label: "Tailwind CSS" },
-  Vite: { icon: SiVite, label: "Vite" },
-  "Node.js": { icon: SiNodedotjs, label: "Node.js" },
-  Express: { icon: SiExpress, label: "Express" },
-  "REST API": { icon: FiTerminal, label: "REST API" },
-  "JWT Auth": { icon: SiJsonwebtokens, label: "JWT Auth" },
-  MongoDB: { icon: SiMongodb, label: "MongoDB" },
-  Mongoose: { icon: FiDatabase, label: "Mongoose" },
-  Git: { icon: SiGit, label: "Git" },
-  GitHub: { icon: SiGithub, label: "GitHub" },
-  Postman: { icon: SiPostman, label: "Postman" },
-  "VS Code": { icon: VscCode, label: "VS Code" },
-  Vercel: { icon: SiVercel, label: "Vercel" },
-  Render: { icon: SiRender, label: "Render" },
+  React: { icon: SiReact, label: "React", color: "#61dafb" },
+  TypeScript: { icon: SiTypescript, label: "TypeScript", color: "#3178c6" },
+  "Tailwind CSS": { icon: SiTailwindcss, label: "Tailwind CSS", color: "#38b2ac" },
+  Vite: { icon: SiVite, label: "Vite", color: "#646cff" },
+  "Node.js": { icon: SiNodedotjs, label: "Node.js", color: "#339933" },
+  Express: { icon: SiExpress, label: "Express", color: "#ffffff" },
+  "REST API": { icon: FiTerminal, label: "REST API", color: "#61dafb" },
+  "JWT Auth": { icon: SiJsonwebtokens, label: "JWT Auth", color: "#ffffff" },
+  MongoDB: { icon: SiMongodb, label: "MongoDB", color: "#47a248" },
+  Mongoose: { icon: FiDatabase, label: "Mongoose", color: "#e22e30" },
+  Git: { icon: SiGit, label: "Git", color: "#f05032" },
+  GitHub: { icon: SiGithub, label: "GitHub", color: "#ffffff" },
+  Postman: { icon: SiPostman, label: "Postman", color: "#ff6c37" },
+  "VS Code": { icon: VscCode, label: "VS Code", color: "#007acc" },
+  Vercel: { icon: SiVercel, label: "Vercel", color: "#ffffff" },
+  Render: { icon: SiRender, label: "Render", color: "#46e3b7" },
 };
 
 const GROUPS = [
@@ -73,7 +68,6 @@ export default function TechStackSection() {
       className="bg-zinc-950 text-zinc-100 px-6 md:px-12 py-24 md:py-32"
       style={{ fontFamily: "'Inter', sans-serif" }}
     >
-      <style>{fontStyles}</style>
 
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -127,9 +121,10 @@ export default function TechStackSection() {
                   return (
                     <span
                       key={tool}
-                      className="inline-flex items-center gap-2 text-sm text-zinc-300 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-blue-800 hover:text-zinc-100 transition-colors"
+                      style={{ "--brand-color": meta?.color || "#3b82f6" }}
+                      className="group inline-flex items-center gap-2 text-sm text-zinc-300 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-[var(--brand-color)] hover:text-zinc-100 transition-all duration-300"
                     >
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-4 h-4 transition-colors duration-300 group-hover:text-[var(--brand-color)]" />
                       <span>{meta?.label || tool}</span>
                     </span>
                   );
