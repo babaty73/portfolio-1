@@ -100,7 +100,7 @@ export default function PortfolioHero() {
               className="mt-8"
             >
               <a
-                href="/assets/Imran_Idris-Resume.pdf"
+                href=""../../assets/Imran_Idris-Resume.pdf"
                 download
                 className="group inline-flex items-center gap-2.5 bg-zinc-900 text-zinc-100 text-sm font-medium px-6 py-3.5 rounded-full border border-zinc-800 hover:border-blue-500/60 hover:shadow-[0_0_24px_-4px_rgba(37,99,235,0.4)] hover:scale-[1.02] transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500"
               >
