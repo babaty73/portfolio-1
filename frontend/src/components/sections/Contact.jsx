@@ -4,7 +4,7 @@ import { Send, Mail, Linkedin, Github } from "lucide-react";
 const API_URL = import.meta.env.VITE_API_URL;
 
 const SOCIALS = [
-  { label: "Telegram", icon: Send, href: "https://t.me/Babafootballeru" },
+  { label: "Telegram", icon: Send, href: "https://t.me/Web_dev_Assistant" },
   { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/imran-endris-26b0103a2" },
   { label: "GitHub", icon: Github, href: "https://github.com/babaty73" },
   { label: "Email", icon: Mail, href: "mailto:imranidris10999@gmail.com" },
