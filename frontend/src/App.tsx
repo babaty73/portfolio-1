@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
+import { Analytics } from "@vercel/analytics/react"
 // Section components
 import Hero from "./components/sections/Hero";
 import WhatIDo from "./components/sections/WhatIDo";
