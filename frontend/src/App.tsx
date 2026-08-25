@@ -158,6 +158,7 @@ function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      
     </>
   );
 }
@@ -174,6 +175,7 @@ export default function App() {
         <About />
         <Contact />
       </main>
+      <Analytics />
     </div>
   );
 }
