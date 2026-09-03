@@ -70,6 +70,20 @@ const EXPERIENCES = [
   ],
   stack: "HTML · CSS · JavaScript · React · Tailwind CSS",
 },
+{
+  id: "education",
+  period: "2025 — Present",
+  role: "BSc in Civil Engineering",
+  company: "Adama Science and Technology University",
+  icon: GraduationCap,
+  description:
+    "Currently pursuing a Bachelor's degree while building practical experience in software development through real-world projects and independent work.",
+  highlights: [
+    "Developing strong analytical and problem-solving skills through engineering studies.",
+    "Applying those skills to software development through hands-on projects and continuous learning.",
+  ],
+  stack: "Civil Engineering · Problem Solving · Technical Analysis",
+},
 ];
 
 export default function Experience() {
