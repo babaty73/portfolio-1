@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Analytics } from "@vercel/analytics/react"
 // Section components
+import Experience from "./components/sections/Exprience";
 import Hero from "./components/sections/Hero";
 import WhatIDo from "./components/sections/WhatIDo";
 import SelectedWork from "./components/sections/SelectedWork";
@@ -14,11 +15,11 @@ import Contact from "./components/sections/Contact";
 const NAV_LINKS = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
 
-const SECTION_IDS = ["work", "about", "contact"];
-
+const SECTION_IDS = ["work", "about", "experience", "contact"];
 function useActiveSection() {
   const [active, setActive] = useState("");
 
@@ -171,6 +172,7 @@ export default function App() {
         <Hero />
         <WhatIDo />
         <SelectedWork />
+        <Experience />
         <TechStack />
         <About />
         <Contact />
