@@ -23,8 +23,7 @@ export default function TheMachine() {
               PHOTO / VIDEO PLACEHOLDER
             </p>
             <p className="text-xs text-zinc-600 max-w-xs">
-              Replace this area with a real photo or short video of the
-              laptop.
+              .
             </p>
           </div>
         </motion.div>
