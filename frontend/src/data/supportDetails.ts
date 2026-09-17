@@ -18,8 +18,8 @@ export const localSupport: LocalPaymentMethod[] = [
     name: "Telebirr",
     description: "Send support directly via Telebirr mobile money.",
     fields: [
-      { label: "Recipient name", value: "TELEBIRR_ACCOUNT_NAME" },
-      { label: "Telebirr number", value: "TELEBIRR_NUMBER" },
+      { label: "Recipient name", value: "Imran " },
+      { label: "Telebirr number", value: "0973362473" },
     ],
     hasQrCode: true,
   },
@@ -28,9 +28,8 @@ export const localSupport: LocalPaymentMethod[] = [
     name: "Commercial Bank of Ethiopia",
     description: "Send support via bank transfer to my CBE account.",
     fields: [
-      { label: "Account holder", value: "CBE_ACCOUNT_NAME" },
-      { label: "Account number", value: "CBE_ACCOUNT_NUMBER" },
-      { label: "Branch", value: "CBE_BRANCH" },
+      { label: "Account holder", value: "Imran Endiris Bedru" },
+      { label: "Account number", value: "1000649955941" },
     ],
     hasQrCode: true,
   },
@@ -81,7 +80,7 @@ export const laptop = {
 
 export const journey = {
   startDate: "April 20, 2026",
-  currentLabel: "September 2026",
+  currentLabel: "Present",
   followerStart: "2 followers",
   followerNow: "3,000+ followers",
   daysLabel: "150 Days of Building in Public",
