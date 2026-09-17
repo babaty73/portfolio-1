@@ -14,7 +14,7 @@ export type SupportProject = {
 export const supportProjects: SupportProject[] = [
   {
     id: "kemer",
-    image: "/assets/kemer-shopping.png",
+    image: "./public/assests/kemer-shopping.png",
     title: "Kemer Market",
     tagline: "A production e-commerce platform built for a real business.",
     stack: "React · TypeScript · Node · Express · MongoDB",
@@ -23,7 +23,7 @@ export const supportProjects: SupportProject[] = [
   },
   {
     id: "astumsj",
-    image: "/assets/astu-bootcamp.png",
+    image: "./public/assests/astu-bootcamp.png",
     title: "ASTU MSJ Bootcamp Management System",
     tagline: "A role-based platform for managing an entire bootcamp workflow.",
     stack: "React · Node · Express · MongoDB · JWT",
@@ -32,7 +32,7 @@ export const supportProjects: SupportProject[] = [
   },
   {
     id: "bloomcare",
-    image: "/assets/bloom-care-screenshot.png",
+    image: "./public/assests/bloom-care-screenshot.png",
     title: "Bloom-Care",
     tagline: "Helping people find medicines available at nearby pharmacies.",
     stack: "React · TypeScript · Node · Express · MongoDB",
@@ -41,7 +41,7 @@ export const supportProjects: SupportProject[] = [
   },
   {
     id: "role-management",
-    image: "/assets/role-management-system.png",
+    image: "./public/assests/role-management-system.png",
     title: "Role-Based Management System",
     tagline: "Turning a Figma design into a fully working web application.",
     stack: "React · TypeScript · Tailwind CSS",
