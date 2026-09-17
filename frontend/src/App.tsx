@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Analytics } from "@vercel/analytics/react"
+import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 // Section components
 import Experience from "./components/sections/Exprience";
 import Hero from "./components/sections/Hero";
@@ -10,6 +11,7 @@ import SelectedWork from "./components/sections/SelectedWork";
 import TechStack from "./components/sections/TechStack";
 import About from "./components/sections/About";
 import Contact from "./components/sections/Contact";
+import SupportPage from "./pages/SupportPage";
 
 
 const NAV_LINKS = [
@@ -59,19 +61,41 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const active = useActiveSection();
   const scrolled = useScrolled();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const onSupportPage = location.pathname === "/support";
 
   function handleNavClick(href: string) {
     setMobileOpen(false);
     const id = href.replace("#", "");
+    if (onSupportPage) {
+      // Navigate back to the single-page portfolio, then scroll to the section.
+      navigate("/");
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+        }, 50);
+      });
+      return;
+    }
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function handleLogoClick() {
+    setMobileOpen(false);
+    if (onSupportPage) {
+      navigate("/");
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled
+          scrolled || onSupportPage
             ? "bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900"
             : "bg-transparent"
         }`}
@@ -80,7 +104,7 @@ function Navbar() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-16">
           {/* logo */}
           <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={handleLogoClick}
             className="text-lg font-semibold tracking-tight focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded"
             style={{ fontFamily: "'Clash Display', sans-serif" }}
           >
@@ -96,7 +120,7 @@ function Navbar() {
                   key={href}
                   onClick={() => handleNavClick(href)}
                   className={`transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded ${
-                    active === id
+                    !onSupportPage && active === id
                       ? "text-zinc-100"
                       : "text-zinc-500 hover:text-zinc-300"
                   }`}
@@ -105,6 +129,16 @@ function Navbar() {
                 </button>
               );
             })}
+            <Link
+              to="/support"
+              className={`transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded ${
+                onSupportPage
+                  ? "text-blue-400"
+                  : "text-zinc-500 hover:text-blue-400"
+              }`}
+            >
+              Support
+            </Link>
           </nav>
 
           {/* desktop cta */}
@@ -150,6 +184,13 @@ function Navbar() {
                 {label}
               </button>
             ))}
+            <Link
+              to="/support"
+              onClick={() => setMobileOpen(false)}
+              className="text-left text-base text-zinc-300 hover:text-blue-400 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 rounded"
+            >
+              Support
+            </Link>
             <button
               onClick={() => handleNavClick("#contact")}
               className="mt-2 w-full text-center text-sm font-medium px-4 py-3 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500"
@@ -164,10 +205,9 @@ function Navbar() {
   );
 }
 
-export default function App() {
+function PortfolioHome() {
   return (
     <div className="bg-zinc-950 min-h-screen text-zinc-100 antialiased">
-      <Navbar />
       <main>
         <Hero />
         <WhatIDo />
@@ -179,5 +219,17 @@ export default function App() {
       </main>
       <Analytics />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<PortfolioHome />} />
+        <Route path="/support" element={<SupportPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
