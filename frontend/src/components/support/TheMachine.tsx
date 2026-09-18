@@ -19,13 +19,12 @@ export default function TheMachine() {
             {/* Video */}
             <div className="col-span-2 aspect-video overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
               <video
-  src="/assets/pcvideo.mp4"
-  autoPlay
-  muted
-  loop
-  playsInline
-  className="w-full h-full object-cover"
-/>
+                src="/assets/pcvideo.mp4"
+                controls
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
             </div>
 
             {/* Image 1 */}
