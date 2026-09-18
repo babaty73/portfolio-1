@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { ImageOff } from "lucide-react";
 import { laptop } from "../../data/supportDetails";
 
 export default function TheMachine() {
   return (
     <section className="px-6 md:px-12 py-20 md:py-28 border-t border-zinc-900 bg-zinc-950">
       <div className="max-w-6xl mx-auto grid md:grid-cols-12 gap-10 md:gap-16 items-center">
-        {/* media placeholder */}
+        
+        {/* Media gallery */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -14,21 +14,41 @@ export default function TheMachine() {
           transition={{ duration: 0.5 }}
           className="md:col-span-6"
         >
-          <div className="aspect-[4/3] w-full rounded-2xl border border-dashed border-zinc-700 bg-zinc-900 flex flex-col items-center justify-center gap-3 text-center px-6">
-            <ImageOff className="w-8 h-8 text-zinc-600" />
-            <p
-              className="text-xs text-zinc-500 tracking-wide"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
-            >
-              PHOTO / VIDEO PLACEHOLDER
-            </p>
-            <p className="text-xs text-zinc-600 max-w-xs">
-              .
-            </p>
+          <div className="grid grid-cols-2 gap-3">
+            
+            {/* Video */}
+            <div className="col-span-2 aspect-video overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <video
+                src="/assets/pcvideo.mp4"
+                controls
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Image 1 */}
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <img
+                src="/assets/img1.jpg"
+                alt="My development setup"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Image 2 */}
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+              <img
+                src="/assets/img2.jpg"
+                alt="My laptop setup"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
           </div>
         </motion.div>
 
-        {/* text */}
+        {/* Text */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
