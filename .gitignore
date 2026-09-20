@@ -1,3 +1,5 @@
 #secrets
 .vscode/
 .continue/
+.env
+.node_modules
