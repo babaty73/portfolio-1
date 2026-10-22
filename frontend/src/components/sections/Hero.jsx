@@ -139,6 +139,8 @@ export default function PortfolioHero() {
             >
               <span>MONGODB</span>
               <span className="text-zinc-800">/</span>
+              <span>NEXT</span>
+              <span className="text-zinc-800">/</span>
               <span>EXPRESS</span>
               <span className="text-zinc-800">/</span>
               <span>REACT</span>
