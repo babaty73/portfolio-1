@@ -182,48 +182,6 @@ const PROJECTS = [
   },
 
   {
-    id: "booking",
-    index: "05",
-    variant: "calendar",
-    image: "/assets/apointment.png",
-    title: "Appointment Booking App",
-    tagline: "A full-stack scheduling system for managing appointments.",
-    role: "Solo developer — full stack",
-    type: "Scheduling platform",
-    stack: "MongoDB · Express · React · Node",
-    liveUrl: "https://appointment-booking-app11.vercel.app",
-    githubUrl: "https://github.com/babaty73/appointment-booking-app",
-    problem: {
-      lead: "Manual scheduling makes conflicts and poor organization almost inevitable.",
-      points: [
-        "Phone-based booking provides no reliable scheduling workflow.",
-        "Clients and administrators need different capabilities.",
-      ],
-    },
-    approach: {
-      lead: "Built the scheduling rules into the application itself.",
-      points: [
-        "Authentication and role separation were established before booking logic.",
-        "Availability and conflicts are validated server-side.",
-      ],
-    },
-    solution: {
-      lead: "A complete MERN appointment management system.",
-      points: [
-        "Role-based dashboards for administrators and clients.",
-        "Booking, availability, confirmation, and management workflows.",
-      ],
-    },
-    result: {
-      lead: "A system that enforces scheduling rules instead of relying on the UI.",
-      points: [
-        "Server-side validation prevents conflicting appointments.",
-        "The complete booking lifecycle is handled inside one application.",
-      ],
-    },
-  },
-
-  {
     id: "lostfound",
     index: "06",
     variant: "listing",
