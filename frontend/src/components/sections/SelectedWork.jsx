@@ -180,48 +180,6 @@ const PROJECTS = [
       ],
     },
   },
-
-  {
-    id: "lostfound",
-    index: "05",
-    variant: "listing",
-    image: "/assets/lost-and-found.jpg",
-    title: "Lost and Found System",
-    tagline: "Digitizing a manual lost-and-found process for campus life.",
-    role: "Solo developer — full stack",
-    type: "Campus utility app",
-    stack: "React · Tailwind · Node · Express · MongoDB",
-    liveUrl: "https://lost-and-found-six-theta.vercel.app",
-    githubUrl: "https://github.com/babaty73/lost-and-found",
-    problem: {
-      lead: "Paper-based lost-and-found processes are difficult to search and maintain.",
-      points: [
-        "Reports can become scattered across messages and physical records.",
-        "Students need a simple way to discover matching lost or found items.",
-      ],
-    },
-    approach: {
-      lead: "Designed the experience around quick reporting and discovery.",
-      points: [
-        "Made reporting simple enough to complete from a phone.",
-        "Structured listings so users can search and filter relevant items.",
-      ],
-    },
-    solution: {
-      lead: "A centralized platform for reporting and finding lost items.",
-      points: [
-        "Users can create, browse, search, and manage listings.",
-        "Responsive interface designed for everyday campus use.",
-      ],
-    },
-    result: {
-      lead: "A structured digital alternative to an informal process.",
-      points: [
-        "Reports are stored in a searchable database instead of scattered records.",
-        "The platform makes it easier to connect lost items with their owners.",
-      ],
-    },
-  },
 ];
 
 function CalendarVisual() {
