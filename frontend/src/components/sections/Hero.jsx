@@ -89,7 +89,7 @@ export default function PortfolioHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-6 text-zinc-400 text-lg max-w-md leading-relaxed"
             >
-              MERN developer turning business needs into production-ready
+              Full-stack Developer turning business needs into production-ready
               applications — from booking systems to custom dashboards.
             </motion.p>
 
