@@ -183,7 +183,7 @@ const PROJECTS = [
 
   {
     id: "lostfound",
-    index: "06",
+    index: "05",
     variant: "listing",
     image: "/assets/lost-and-found.jpg",
     title: "Lost and Found System",
