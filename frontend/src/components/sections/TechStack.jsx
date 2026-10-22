@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import {
   SiReact,
+  SiNext,
   SiTypescript,
   SiTailwindcss,
   SiVite,
@@ -22,6 +23,7 @@ import { VscCode } from "react-icons/vsc";
 
 const TOOL_META = {
   React: { icon: SiReact, label: "React", color: "#61dafb" },
+  Nextjs: { icon: SiNextjs, label: "Next.js", color: "#000000" },
   TypeScript: { icon: SiTypescript, label: "TypeScript", color: "#3178c6" },
   "Tailwind CSS": { icon: SiTailwindcss, label: "Tailwind CSS", color: "#38b2ac" },
   Vite: { icon: SiVite, label: "Vite", color: "#646cff" },
@@ -42,7 +44,7 @@ const TOOL_META = {
 const GROUPS = [
   {
     layer: "Frontend",
-    tools: ["React", "TypeScript", "Tailwind CSS", "Vite"],
+    tools: ["React", "Next", "TypeScript", "Tailwind CSS", "Vite"],
   },
   {
     layer: "Backend",
